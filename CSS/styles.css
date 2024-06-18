@@ -1,0 +1,51 @@
+:root{
+    --dark: #17181E;
+    --blue: #849BEB;
+    --lightBlue: #C4D5FC;
+    --green: #25D952;
+    --light: #F0F0F1;
+    --gray: #6B6B7C;
+    --dimmedLight: #BBBBBB;
+    --pink: #DDC2D4;
+    --content: #1E1F27;
+    --hover-color: rgba(255, 141, 141, 0.15);
+    --green-hover: rgba(37, 217, 82, 0.49);
+}
+
+body{
+    margin: 0%;
+    padding: 0%;
+    background-color: var(--dark);
+    font-family: Inter;
+    color: var(--light);
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 1000px;
+}
+
+#container .header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+#container .header img{
+    width: 200px;
+}
+
+#container .header h1{
+    font-size: 36px;
+    font-weight: 600;
+    margin: 10px 0px;
+}
+
+#container .main{
+
+}
