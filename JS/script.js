@@ -20,56 +20,39 @@ function toTitleCase(str) {
     }).join(' ');
 }
 
-function writeTop(response){
+function writeTop(response) {
     let pokemonName = response.name;
     let pokemonId = response.id;
     let pokemonWeight = response.weight;
     let pokemonHeight = response.height;
-    let pokemonType = response.types;
+    let pokemonTypes = response.types;
     let pokemonImage = response.sprites.front_default;
 
-    const top = document.querySelector(".pokemon-place");
-    top.innerHTML = "";
-
-    const nameIdDiv = document.createElement("div");
-    nameIdDiv.classList.add("name-id-div");
-    const name = document.createElement("p");
+    const name = document.querySelector("#pokemon-name");
     name.textContent = toTitleCase(pokemonName);
-    const Id = document.createElement("p");
+
+    const Id = document.querySelector("#pokemon-id");
     Id.textContent = "#" + pokemonId;
-    nameIdDiv.appendChild(name);
-    nameIdDiv.appendChild(Id);
 
-    const weightHeightDiv = document.createElement("div");
-    weightHeightDiv.classList.add("weight-height-div");
-    const weight = document.createElement("p");
+    const weight = document.querySelector("#weight");
     weight.textContent = "Weight: " + pokemonWeight;
-    const height = document.createElement("p");
+
+    const height = document.querySelector("#height");
     height.textContent = "Height: " + pokemonHeight;
-    weightHeightDiv.appendChild(weight);
-    weightHeightDiv.appendChild(height);
 
-    const imgDiv = document.createElement("div");
-    imgDiv.classList.add("img-div");
-    const image = document.createElement("img");
+    const image = document.querySelector("#sprite");
     image.src = pokemonImage;
-    imgDiv.appendChild(image);
 
-    const typeDiv = document.createElement("div");
-    typeDiv.classList.add("type-div");
-    pokemonType.forEach((type) => {
-        const typeP = document.createElement("p");
-        typeP.textContent = toTitleCase(type.type.name);
-        typeDiv.appendChild(typeP);
-    });
-
-    top.appendChild(nameIdDiv);
-    top.appendChild(weightHeightDiv);
-    top.appendChild(imgDiv);
-    top.appendChild(typeDiv);
+    const typesContainer = document.querySelector("#types");
+    typesContainer.innerHTML = "";
     
-    return;
+    pokemonTypes.forEach((typeInfo) => {
+        const typeP = document.createElement("p");
+        typeP.textContent = toTitleCase(typeInfo.type.name);
+        typesContainer.appendChild(typeP);
+    });
 }
+
 
 function writeBottom(response){
     const placeHp = document.getElementById("hp");
