@@ -47,5 +47,93 @@ body{
 }
 
 #container .main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--content);
+    border-radius: 12px;
+    padding: 36px 48px;
+}
 
+#container .top .search p{
+    font-size: 18px;
+    margin: 8px 0px;
+}
+
+#container .user-input input{
+    width: 200px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    border: 1px solid var(--gray);
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 0px 12px;
+    margin: 8px 0px;
+    text-align: center;
+}
+
+#container .user-input button{
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--green);
+    color: var(--light);
+    font-weight: 600;
+    margin: 8px 0px;
+    cursor: pointer;
+}
+
+#container .pokemon-img{
+    height: 300px;
+}
+
+.bottom {
+    background-color: var(--dark);
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.table {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    padding: 10px;
+    text-align: left;
+}
+
+.table th {
+    background-color: var(--blue);
+    color: var(--light);
+    font-weight: bold;
+}
+
+.table td {
+    background-color: var(--content);
+    color: var(--light);
+}
+
+.table tr:nth-child(even) td {
+    background-color: var(--gray);
+}
+
+.table td#hp, 
+.table td#attack, 
+.table td#defense, 
+.table td#special-attack, 
+.table td#special-defense, 
+.table td#speed {
+    border-radius: 4px;
+    padding: 8px;
+    text-align: center;
 }
