@@ -1,11 +1,13 @@
 async function fetchData() {
     try {
         let pokemonInput = document.getElementById('search-input').value.toLowerCase();
+
         const response = await 
         fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/' + pokemonInput);
-        
         const data = await response.json();
+        
         writeTop(data);
+        writeBottom(data);
     } 
     catch (error) {
        alert("Pokémon not found");
@@ -66,5 +68,23 @@ function writeTop(response){
     top.appendChild(imgDiv);
     top.appendChild(typeDiv);
     
+    return;
+}
+
+function writeBottom(response){
+    const placeHp = document.getElementById("hp");
+    const placeAttack = document.getElementById("attack");
+    const placeDefense = document.getElementById("defense");
+    const placeSpecialAttack = document.getElementById("special-attack");
+    const placeSpecialDefense = document.getElementById("special-defense");
+    const placeSpeed = document.getElementById("speed");
+
+    placeHp.innerHTML = response.stats[0].base_stat;
+    placeAttack.textContent = response.stats[1].base_stat;
+    placeDefense.textContent = response.stats[2].base_stat;
+    placeSpecialAttack.textContent = response.stats[3].base_stat;
+    placeSpecialDefense.textContent = response.stats[4].base_stat;
+    placeSpeed.textContent = response.stats[5].base_stat;
+
     return;
 }

@@ -25,7 +25,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 1000px;
+    height: 1600px;
 }
 
 #container .header{
@@ -38,6 +38,8 @@ body{
 
 #container .header img{
     width: 200px;
+    margin: 0px;
+    padding: 0px;
 }
 
 #container .header h1{
@@ -59,6 +61,10 @@ body{
 #container .top .search p{
     font-size: 18px;
     margin: 8px 0px;
+}
+
+#container .user-input{
+    margin-bottom: 24px;
 }
 
 #container .user-input input{
@@ -86,8 +92,56 @@ body{
     cursor: pointer;
 }
 
-#container .pokemon-img{
+#container .pokemon-place{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     height: 300px;
+    background-color: var(--dark);
+    border-radius: 8px;
+    padding: 8px;
+    margin-bottom: 24px;
+}
+
+#container .pokemon-place p{
+    margin: 5px;
+}
+
+#container .name-id-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 5px;
+}
+
+#container .weight-height-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 5px;
+}
+
+#container .img-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5px;
+}
+
+#container img{
+    display: flex;
+    height: 200px;
+    width: 200px;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5px;
+}
+
+#container .type-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 5px;
 }
 
 .bottom {
